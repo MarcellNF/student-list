@@ -1,4 +1,4 @@
-package org.example;
+package org.example.school;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Main {
 
         System.out.println(neuefische);
         System.out.println(neuefische.findStudentByMatriculationNumber("3636363"));
-        neuefische.removeStudent(daniel);
+        neuefische.removeStudent(daniel.getMatriculationNumber());
         System.out.println(neuefische);
 
         System.out.println(neuefische.getCoursesOfStudent(daniel));

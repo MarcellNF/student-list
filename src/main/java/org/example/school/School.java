@@ -1,33 +1,28 @@
-package org.example;
+package org.example.school;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class School {
 
-    private List<Student> students = new ArrayList<>();
+    private Map<String, Student> students = new HashMap<>();
 
     public void addStudent(Student student) {
-        students.add(student);
+        students.put(student.getMatriculationNumber(), student);
     }
 
     public Student findStudentByMatriculationNumber(String matriculationNumber) {
-        for (Student student : students) {
-            if (student.getMatriculationNumber().equals(matriculationNumber)) {
-                return student;
-            }
-        }
-        return null;
+        return students.get(matriculationNumber);
     }
 
-    public void removeStudent(Student student) {
-        students.remove(student);
+    public void removeStudent(String matriculationNumber) {
+        students.remove(matriculationNumber);
     }
 
     public List<Course> getCoursesOfStudent(Student student) {
         return student.getCourses();
     }
-
 
     @Override
     public String toString() {
